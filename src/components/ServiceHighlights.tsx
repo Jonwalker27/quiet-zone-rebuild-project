@@ -1,14 +1,13 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Oil, Gauge, Wrench, Thermometer, Car, Cog } from 'lucide-react';
+import { Droplet, Gauge, Wrench, Thermometer, Car, Cog } from 'lucide-react';
 
 const services = [
   {
     id: 'oil-changes',
     title: 'Oil Changes & Maintenance',
     description: 'Regular maintenance to keep your vehicle running smoothly and prevent costly repairs.',
-    icon: <Oil size={40} className="text-qz-blue" />,
+    icon: <Droplet size={40} className="text-qz-blue" />,
   },
   {
     id: 'brake-repair',
