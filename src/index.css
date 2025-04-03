@@ -33,7 +33,7 @@
     --input: 214.3 31.8% 91.4%;
     --ring: 222.2 84% 4.9%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
   }
 
   .dark {
@@ -72,42 +72,82 @@
     @apply border-border;
   }
 
+  html {
+    @apply scroll-smooth;
+  }
+
   body {
-    @apply bg-background text-foreground;
-    font-family: 'Segoe UI', Arial, sans-serif;
+    @apply bg-qz-light text-qz-dark font-opensans;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-bold text-qz-blue;
+    @apply font-montserrat font-bold text-qz-blue tracking-wide;
+  }
+  
+  h1 {
+    @apply text-4xl md:text-5xl lg:text-6xl;
+  }
+  
+  h2 {
+    @apply text-3xl md:text-4xl;
+  }
+  
+  h3 {
+    @apply text-2xl md:text-3xl;
+  }
+  
+  p {
+    @apply leading-relaxed;
   }
 }
 
 @layer components {
   .btn-primary {
-    @apply bg-qz-blue hover:bg-qz-lightblue text-white py-2 px-4 rounded transition-colors duration-300;
+    @apply bg-qz-blue hover:bg-qz-lightblue text-white py-3 px-6 rounded-lg 
+           font-medium tracking-wide transition-all duration-300 shadow-md 
+           hover:shadow-lg transform hover:-translate-y-1;
   }
 
   .btn-accent {
-    @apply bg-qz-red hover:opacity-90 text-white py-2 px-4 rounded transition-colors duration-300;
+    @apply bg-qz-yellow hover:bg-qz-gold text-qz-dark py-3 px-6 rounded-lg
+           font-medium tracking-wide transition-all duration-300 shadow-md 
+           hover:shadow-lg transform hover:-translate-y-1;
   }
 
   .section-title {
-    @apply text-3xl md:text-4xl font-bold text-qz-blue mb-6 text-center;
+    @apply text-3xl md:text-4xl font-bold text-qz-blue mb-8 text-center tracking-wide;
   }
 
   .section-container {
-    @apply py-12 px-4 max-w-7xl mx-auto;
+    @apply py-16 px-4 max-w-7xl mx-auto;
   }
 
   .service-card {
-    @apply bg-white rounded-lg shadow-md p-6 transition-all duration-300 hover:shadow-lg;
+    @apply bg-white rounded-xl shadow-premium hover:shadow-premium-hover p-6 
+           transition-all duration-300 hover:-translate-y-1 border border-gray-100;
   }
 
   .location-card {
-    @apply bg-white rounded-lg shadow-md p-6 transition-all duration-300 hover:shadow-lg;
+    @apply bg-white rounded-xl shadow-premium hover:shadow-premium-hover p-6 
+           transition-all duration-300 hover:-translate-y-1 border border-gray-100;
   }
 
   .testimonial-card {
-    @apply bg-white rounded-lg shadow-md p-6;
+    @apply bg-white rounded-xl shadow-premium p-6 hover:shadow-premium-hover
+           transition-all duration-300 border border-gray-100;
+  }
+  
+  .premium-input {
+    @apply w-full py-3 px-4 border border-gray-200 rounded-lg focus:outline-none 
+           focus:ring-2 focus:ring-qz-lightblue focus:border-transparent transition-all
+           duration-200 bg-white text-qz-dark placeholder:text-qz-gray/60;
+  }
+  
+  .premium-label {
+    @apply block text-sm font-medium text-qz-dark mb-2;
+  }
+  
+  .premium-select {
+    @apply premium-input appearance-none bg-right bg-no-repeat pr-10;
   }
 }

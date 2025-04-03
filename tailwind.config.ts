@@ -19,6 +19,10 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+				montserrat: ['Montserrat', 'sans-serif'],
+				opensans: ['Open Sans', 'sans-serif'],
+			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
@@ -54,11 +58,13 @@ export default {
 					foreground: 'hsl(var(--card-foreground))'
 				},
 				qz: {
-					blue: '#1a3a7a',
-					red: '#e74c3c',
-					lightblue: '#2c5cbb',
-					gray: '#f5f5f5',
-					darkgray: '#333333'
+					blue: '#0B3C5D',       // Primary deep blue
+					lightblue: '#328CC1',  // Secondary blue
+					yellow: '#FFC857',     // Vibrant yellow accent
+					gold: '#D9B310',       // Alternative gold accent
+					light: '#F8F9FA',      // Light background
+					dark: '#1D2731',       // Dark text
+					gray: '#6C7A89'        // Medium gray for secondary text
 				}
 			},
 			borderRadius: {
@@ -100,13 +106,31 @@ export default {
 					'100%': {
 						transform: 'translateX(0)'
 					}
+				},
+				'pulse-soft': {
+					'0%, 100%': { 
+						opacity: '1' 
+					},
+					'50%': { 
+						opacity: '0.85' 
+					}
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
 				'fade-in': 'fade-in 0.5s ease-out forwards',
-				'slide-in': 'slide-in 0.5s ease-out forwards'
+				'slide-in': 'slide-in 0.5s ease-out forwards',
+				'pulse-soft': 'pulse-soft 3s ease-in-out infinite'
+			},
+			backgroundImage: {
+				'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+				'gradient-primary': 'linear-gradient(to right, #0B3C5D, #328CC1)',
+				'texture-light': 'url("data:image/svg+xml,%3Csvg width=\'40\' height=\'40\' viewBox=\'0 0 40 40\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'%23f1f5f9\' fill-opacity=\'0.3\' fill-rule=\'evenodd\'%3E%3Cpath d=\'M0 40L40 0H20L0 20M40 40V20L20 40\'/%3E%3C/g%3E%3C/svg%3E")'
+			},
+			boxShadow: {
+				'premium': '0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.03)',
+				'premium-hover': '0 20px 35px -10px rgba(0, 0, 0, 0.1), 0 10px 15px -5px rgba(0, 0, 0, 0.04)'
 			}
 		}
 	},
