@@ -6,10 +6,14 @@ import { ArrowRight, CheckCircle, Star, Calendar } from 'lucide-react';
 const Hero = () => {
   return (
     <div className="relative bg-gradient-primary text-white overflow-hidden">
+      {/* Professional auto repair shop background image with overlay */}
+      <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1520340356584-f9917d1eea6f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80')] bg-cover bg-center opacity-50"></div>
+      
+      {/* Gradient overlay */}
+      <div className="absolute inset-0 bg-gradient-to-r from-qz-blue/90 to-qz-blue/70"></div>
+      
       {/* Subtle background texture */}
       <div className="absolute inset-0 bg-texture-light opacity-10"></div>
-      
-      <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1493676304819-0d7a8d026dcf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80')] bg-cover bg-center opacity-15"></div>
       
       <div className="relative max-w-7xl mx-auto px-6 py-20 md:py-28 lg:py-32 flex flex-col items-center text-center">
         <div className="animate-fade-in">

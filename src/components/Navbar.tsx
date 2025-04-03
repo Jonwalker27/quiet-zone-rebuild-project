@@ -3,6 +3,15 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Menu, X, Phone, Clock, MapPin } from 'lucide-react';
 
+const locations = [
+  { id: 'torrington', name: 'Torrington' },
+  { id: 'thomaston', name: 'Thomaston' },
+  { id: 'bantam', name: 'Bantam' },
+  { id: 'watertown', name: 'Watertown' },
+  { id: 'naugatuck', name: 'Naugatuck' },
+  { id: 'orange', name: 'Orange' },
+];
+
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -11,7 +20,20 @@ const Navbar = () => {
   };
 
   return (
-    <header className="w-full bg-white shadow-md">
+    <header className="w-full bg-white">
+      {/* Top Locations Bar */}
+      <div className="top-locations-bar">
+        <div className="container mx-auto">
+          <ul className="locations-list">
+            {locations.map(location => (
+              <li key={location.id}>
+                <Link to={`/locations/${location.id}`}>{location.name}</Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+      
       <div className="max-w-7xl mx-auto px-4">
         {/* Top Bar with Contact Info */}
         <div className="hidden md:flex justify-between items-center py-2 text-sm border-b">
@@ -26,10 +48,10 @@ const Navbar = () => {
             </div>
           </div>
           <div className="flex items-center space-x-3">
-            <Link to="/contact" className="hover:text-qz-red transition-colors">
+            <Link to="/contact" className="hover:text-qz-yellow transition-colors">
               Contact Us
             </Link>
-            <Link to="/locations" className="hover:text-qz-red transition-colors">
+            <Link to="/locations" className="hover:text-qz-yellow transition-colors">
               <div className="flex items-center">
                 <MapPin size={16} className="mr-1" />
                 <span>Find Location</span>
@@ -41,16 +63,16 @@ const Navbar = () => {
         {/* Main Navigation */}
         <div className="flex justify-between items-center py-4">
           <Link to="/" className="flex items-center">
-            <span className="text-2xl font-bold text-qz-blue">Quiet Zone <span className="text-qz-red">CT</span></span>
+            <span className="text-2xl font-bold text-qz-blue">Quiet Zone <span className="text-qz-yellow">CT</span></span>
           </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-6">
-            <Link to="/" className="text-qz-darkgray hover:text-qz-red font-medium transition-colors">Home</Link>
-            <Link to="/services" className="text-qz-darkgray hover:text-qz-red font-medium transition-colors">Services</Link>
-            <Link to="/locations" className="text-qz-darkgray hover:text-qz-red font-medium transition-colors">Locations</Link>
-            <Link to="/about" className="text-qz-darkgray hover:text-qz-red font-medium transition-colors">About Us</Link>
-            <Link to="/resources" className="text-qz-darkgray hover:text-qz-red font-medium transition-colors">Resources</Link>
+            <Link to="/" className="text-qz-darkgray hover:text-qz-yellow font-medium transition-colors">Home</Link>
+            <Link to="/services" className="text-qz-darkgray hover:text-qz-yellow font-medium transition-colors">Services</Link>
+            <Link to="/locations" className="text-qz-darkgray hover:text-qz-yellow font-medium transition-colors">Locations</Link>
+            <Link to="/about" className="text-qz-darkgray hover:text-qz-yellow font-medium transition-colors">About Us</Link>
+            <Link to="/resources" className="text-qz-darkgray hover:text-qz-yellow font-medium transition-colors">Resources</Link>
           </nav>
 
           <div className="hidden md:block">
@@ -68,11 +90,11 @@ const Navbar = () => {
       {isMenuOpen && (
         <div className="md:hidden bg-white px-4 py-4 shadow-lg animate-fade-in">
           <div className="flex flex-col space-y-4">
-            <Link to="/" className="text-qz-darkgray hover:text-qz-red font-medium transition-colors" onClick={toggleMenu}>Home</Link>
-            <Link to="/services" className="text-qz-darkgray hover:text-qz-red font-medium transition-colors" onClick={toggleMenu}>Services</Link>
-            <Link to="/locations" className="text-qz-darkgray hover:text-qz-red font-medium transition-colors" onClick={toggleMenu}>Locations</Link>
-            <Link to="/about" className="text-qz-darkgray hover:text-qz-red font-medium transition-colors" onClick={toggleMenu}>About Us</Link>
-            <Link to="/resources" className="text-qz-darkgray hover:text-qz-red font-medium transition-colors" onClick={toggleMenu}>Resources</Link>
+            <Link to="/" className="text-qz-darkgray hover:text-qz-yellow font-medium transition-colors" onClick={toggleMenu}>Home</Link>
+            <Link to="/services" className="text-qz-darkgray hover:text-qz-yellow font-medium transition-colors" onClick={toggleMenu}>Services</Link>
+            <Link to="/locations" className="text-qz-darkgray hover:text-qz-yellow font-medium transition-colors" onClick={toggleMenu}>Locations</Link>
+            <Link to="/about" className="text-qz-darkgray hover:text-qz-yellow font-medium transition-colors" onClick={toggleMenu}>About Us</Link>
+            <Link to="/resources" className="text-qz-darkgray hover:text-qz-yellow font-medium transition-colors" onClick={toggleMenu}>Resources</Link>
             <div className="flex flex-col space-y-2 pt-4 border-t">
               <div className="flex items-center text-qz-blue">
                 <Phone size={16} className="mr-2" />

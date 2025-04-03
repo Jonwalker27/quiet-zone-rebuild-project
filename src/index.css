@@ -78,10 +78,12 @@
 
   body {
     @apply bg-qz-light text-qz-dark font-opensans;
+    line-height: 1.6;
   }
 
   h1, h2, h3, h4, h5, h6 {
     @apply font-montserrat font-bold text-qz-blue tracking-wide;
+    letter-spacing: -0.02em;
   }
   
   h1 {
@@ -98,6 +100,10 @@
   
   p {
     @apply leading-relaxed;
+  }
+
+  section {
+    @apply py-20;
   }
 }
 
@@ -149,5 +155,37 @@
   
   .premium-select {
     @apply premium-input appearance-none bg-right bg-no-repeat pr-10;
+  }
+
+  .top-locations-bar {
+    @apply bg-qz-blue py-1.5;
+  }
+
+  .locations-list {
+    @apply flex justify-center items-center flex-wrap gap-4 md:gap-6 px-4;
+  }
+
+  .locations-list li {
+    @apply list-none m-0;
+  }
+
+  .locations-list a {
+    @apply text-white text-sm no-underline transition-colors hover:text-qz-yellow;
+  }
+
+  @media (max-width: 768px) {
+    .locations-list {
+      @apply text-xs;
+    }
+  }
+
+  @media (max-width: 576px) {
+    .locations-list {
+      @apply flex-col items-center;
+    }
+    
+    .locations-list li {
+      @apply my-1;
+    }
   }
 }
