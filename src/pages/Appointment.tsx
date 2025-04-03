@@ -1,7 +1,6 @@
-
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Calendar, Clock, Car, Tools, User, Phone, Mail, ArrowRight, ArrowLeft, CheckCircle } from 'lucide-react';
+import { Calendar, Clock, Car, Wrench, User, Phone, Mail, ArrowRight, ArrowLeft, CheckCircle } from 'lucide-react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 
@@ -147,7 +146,7 @@ const Appointment = () => {
               {step === 1 && (
                 <div>
                   <h2 className="text-2xl font-bold text-qz-blue mb-6 flex items-center">
-                    <Tools size={24} className="mr-2 text-qz-yellow" /> Select Service & Location
+                    <Wrench size={24} className="mr-2 text-qz-yellow" /> Select Service & Location
                   </h2>
                   
                   <div className="mb-8">
@@ -401,7 +400,7 @@ const Appointment = () => {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                       <div>
                         <h3 className="text-lg font-semibold text-qz-blue mb-2 flex items-center">
-                          <Tools size={18} className="mr-2 text-qz-yellow" /> Service Details
+                          <Wrench size={18} className="mr-2 text-qz-yellow" /> Service Details
                         </h3>
                         <div className="mb-4">
                           <div className="text-sm text-qz-gray">Location:</div>
