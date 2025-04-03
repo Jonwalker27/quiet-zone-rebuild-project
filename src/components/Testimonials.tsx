@@ -8,7 +8,7 @@ const testimonials = [
     name: 'Jennifer M.',
     location: 'Torrington',
     stars: 5,
-    text: 'I've been bringing my cars to Quiet Zone for years. Their service is always top-notch, prices are fair, and they never try to sell me services I don't need. Highly recommend!',
+    text: "I've been bringing my cars to Quiet Zone for years. Their service is always top-notch, prices are fair, and they never try to sell me services I don't need. Highly recommend!",
   },
   {
     id: 2,
@@ -22,14 +22,14 @@ const testimonials = [
     name: 'Sarah P.',
     location: 'Watertown',
     stars: 4,
-    text: 'As a woman who knows very little about cars, I appreciate how the staff takes time to explain everything to me without being condescending. I always feel I'm getting honest service.',
+    text: "As a woman who knows very little about cars, I appreciate how the staff takes time to explain everything to me without being condescending. I always feel I'm getting honest service.",
   },
   {
     id: 4,
     name: 'Michael D.',
     location: 'Bantam',
     stars: 5,
-    text: 'Changed from the dealership to Quiet Zone and I'm saving hundreds on regular maintenance without sacrificing quality. Their technicians are extremely knowledgeable.',
+    text: "Changed from the dealership to Quiet Zone and I'm saving hundreds on regular maintenance without sacrificing quality. Their technicians are extremely knowledgeable.",
   },
   {
     id: 5,
@@ -43,7 +43,7 @@ const testimonials = [
     name: 'David W.',
     location: 'Orange',
     stars: 4,
-    text: 'Brought my truck in for an issue that two other places couldn't figure out. The team at Quiet Zone diagnosed and fixed it the same day. Great technical knowledge!',
+    text: "Brought my truck in for an issue that two other places couldn't figure out. The team at Quiet Zone diagnosed and fixed it the same day. Great technical knowledge!",
   },
 ];
 
