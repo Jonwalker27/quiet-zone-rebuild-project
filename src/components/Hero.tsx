@@ -1,7 +1,7 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, CheckCircle, Star, Calendar } from 'lucide-react';
+import { CheckCircle, Star, Calendar } from 'lucide-react';
+import ExploreServicesButton from './ExploreServicesButton';
 
 const Hero = () => {
   return (
@@ -29,9 +29,7 @@ const Hero = () => {
             <Link to="/appointment" className="btn-accent text-lg px-8 py-4 flex items-center justify-center shadow-xl">
               Schedule Service <Calendar size={20} className="ml-2" />
             </Link>
-            <Link to="/services" className="bg-white text-qz-blue hover:bg-gray-100 text-lg px-8 py-4 rounded-lg flex items-center justify-center transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-1">
-              Explore Services <ArrowRight size={20} className="ml-2" />
-            </Link>
+            <ExploreServicesButton />
           </div>
           
           <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-12">

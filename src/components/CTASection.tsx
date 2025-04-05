@@ -1,9 +1,21 @@
-
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Calendar, Phone } from 'lucide-react';
+import { ArrowRight, Calendar, Phone, MapPin, CheckCircle2 } from 'lucide-react';
 
-const CTASection = () => {
+const CTASection: React.FC = () => {
+  const [email, setEmail] = useState<string>('');
+  const [subscribed, setSubscribed] = useState<boolean>(false);
+
+  const handleSubscribe = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    // In a real implementation, you would send this to your backend
+    console.log('Subscribing email:', email);
+    setSubscribed(true);
+    setEmail('');
+    // Reset the subscribed state after 3 seconds
+    setTimeout(() => setSubscribed(false), 3000);
+  };
+
   return (
     <section className="py-20 bg-gradient-primary relative overflow-hidden">
       {/* Background pattern */}
@@ -13,34 +25,75 @@ const CTASection = () => {
       <div className="absolute -right-20 -top-20 w-96 h-96 rounded-full bg-qz-lightblue opacity-20 blur-3xl"></div>
       <div className="absolute -left-20 -bottom-20 w-96 h-96 rounded-full bg-qz-yellow opacity-10 blur-3xl"></div>
       
-      <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
-        <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">
-          Ready to Experience the <span className="text-qz-yellow">Quiet Zone</span> Difference?
-        </h2>
-        <p className="text-xl text-white/90 mb-10 max-w-2xl mx-auto font-light">
-          Schedule your service appointment today and see why thousands of Connecticut residents trust us with their vehicles.
-        </p>
-        
-        <div className="flex flex-col sm:flex-row gap-6 justify-center mb-12">
-          <Link 
-            to="/appointment" 
-            className="btn-accent text-lg px-8 py-4 flex items-center justify-center shadow-xl"
-          >
-            Schedule Service <Calendar size={20} className="ml-2" />
-          </Link>
-          <Link 
-            to="/contact" 
-            className="bg-white text-qz-blue hover:bg-gray-100 text-lg px-8 py-4 rounded-lg flex items-center justify-center transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-1"
-          >
-            Contact Us <ArrowRight size={20} className="ml-2" />
-          </Link>
-        </div>
-        
-        <div className="inline-block border border-white/20 rounded-full px-6 py-3 bg-white/5 backdrop-blur-sm">
-          <p className="flex items-center justify-center text-white font-montserrat">
-            <Phone size={20} className="mr-3 text-qz-yellow animate-pulse-soft" />
-            Questions? Call us at <a href="tel:8604073984" className="text-qz-yellow font-semibold ml-2 hover:underline">(860) 407-3984</a>
-          </p>
+      <div className="max-w-6xl mx-auto px-6 relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="text-center lg:text-left">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">
+              Ready to Experience the <span className="text-qz-yellow">Quiet Zone</span> Difference?
+            </h2>
+            <p className="text-xl text-white/90 mb-8 lg:max-w-lg font-light">
+              Schedule your service appointment today and see why thousands of Connecticut residents trust us with their vehicles.
+            </p>
+            
+            <div className="flex flex-col sm:flex-row gap-6 justify-center lg:justify-start mb-8">
+              <Link 
+                to="/appointment" 
+                className="btn-accent text-lg px-8 py-4 flex items-center justify-center shadow-xl"
+              >
+                Schedule Service <Calendar size={20} className="ml-2" />
+              </Link>
+              <Link 
+                to="/locations" 
+                className="bg-white text-qz-blue hover:bg-gray-100 text-lg px-8 py-4 rounded-lg flex items-center justify-center transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-1"
+              >
+                Find a Location <MapPin size={20} className="ml-2" />
+              </Link>
+            </div>
+            
+            <div className="inline-block border border-white/20 rounded-full px-6 py-3 bg-white/5 backdrop-blur-sm">
+              <p className="flex items-center justify-center text-white font-montserrat">
+                <Phone size={20} className="mr-3 text-qz-yellow animate-pulse-soft" />
+                Questions? Call us at <a href="tel:8604073984" className="text-qz-yellow font-semibold ml-2 hover:underline">(860) 407-3984</a>
+              </p>
+            </div>
+          </div>
+          
+          {/* Email signup form */}
+          <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20 shadow-xl">
+            <h3 className="text-2xl font-bold text-white mb-2">Get Exclusive Savings</h3>
+            <p className="text-white/80 mb-6">
+              Join our email list to receive maintenance tips, seasonal offers, and exclusive deals only available to subscribers.
+            </p>
+            
+            <form onSubmit={handleSubscribe} className="space-y-4">
+              <div>
+                <input
+                  type="email"
+                  placeholder="Your email address"
+                  className="w-full px-4 py-3 rounded-lg border-2 border-white/30 bg-white/10 text-white focus:outline-none focus:border-qz-yellow"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
+                />
+              </div>
+              <button
+                type="submit"
+                className="w-full bg-qz-yellow hover:bg-qz-yellow/90 text-qz-blue font-bold py-3 rounded-lg transition-colors"
+              >
+                Subscribe & Save
+              </button>
+            </form>
+            
+            {subscribed && (
+              <p className="mt-4 text-qz-yellow flex items-center justify-center">
+                <CheckCircle2 size={20} className="mr-2" /> Thanks for subscribing!
+              </p>
+            )}
+            
+            <p className="text-white/60 text-sm mt-4 text-center">
+              We respect your privacy. Unsubscribe anytime.
+            </p>
+          </div>
         </div>
       </div>
       

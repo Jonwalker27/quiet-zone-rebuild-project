@@ -1,7 +1,7 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Droplet, Gauge, Wrench, Thermometer, Car, Cog, ArrowRight } from 'lucide-react';
+import ExploreServicesButton from './ExploreServicesButton';
 
 const services = [
   {
@@ -76,9 +76,7 @@ const ServiceHighlights = () => {
         </div>
         
         <div className="text-center mt-16">
-          <Link to="/services" className="btn-accent inline-flex items-center">
-            Explore All Services <ArrowRight size={20} className="ml-2" />
-          </Link>
+          <ExploreServicesButton />
         </div>
       </div>
     </section>

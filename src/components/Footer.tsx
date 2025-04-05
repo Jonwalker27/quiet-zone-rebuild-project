@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Phone, Mail, MapPin, Clock, Facebook, Instagram, Youtube } from 'lucide-react';
@@ -15,13 +14,13 @@ const Footer = () => {
               Family-owned and operated since 1990, providing quality automotive services at affordable prices throughout Connecticut.
             </p>
             <div className="flex space-x-4">
-              <a href="https://facebook.com" className="hover:text-qz-red transition-colors">
+              <a href="https://facebook.com" className="hover:text-qz-yellow transition-colors">
                 <Facebook size={20} />
               </a>
-              <a href="https://instagram.com" className="hover:text-qz-red transition-colors">
+              <a href="https://instagram.com" className="hover:text-qz-yellow transition-colors">
                 <Instagram size={20} />
               </a>
-              <a href="https://youtube.com" className="hover:text-qz-red transition-colors">
+              <a href="https://youtube.com" className="hover:text-qz-yellow transition-colors">
                 <Youtube size={20} />
               </a>
             </div>
@@ -32,22 +31,22 @@ const Footer = () => {
             <h3 className="text-xl font-bold mb-4 text-white">Our Services</h3>
             <ul className="space-y-2">
               <li>
-                <Link to="/services#oil-changes" className="hover:text-qz-red transition-colors">Oil Changes & Maintenance</Link>
+                <Link to="/services#oil-changes" className="hover:text-qz-yellow transition-colors">Oil Changes & Maintenance</Link>
               </li>
               <li>
-                <Link to="/services#brake-repair" className="hover:text-qz-red transition-colors">Brake Repair & Service</Link>
+                <Link to="/services#brake-repair" className="hover:text-qz-yellow transition-colors">Brake Repair & Service</Link>
               </li>
               <li>
-                <Link to="/services#engine-diagnostics" className="hover:text-qz-red transition-colors">Engine Diagnostics</Link>
+                <Link to="/services#engine-diagnostics" className="hover:text-qz-yellow transition-colors">Engine Diagnostics</Link>
               </li>
               <li>
-                <Link to="/services#emissions" className="hover:text-qz-red transition-colors">Emissions Testing</Link>
+                <Link to="/services#emissions" className="hover:text-qz-yellow transition-colors">Emissions Testing</Link>
               </li>
               <li>
-                <Link to="/services#ac-service" className="hover:text-qz-red transition-colors">AC & Heating Service</Link>
+                <Link to="/services#ac-service" className="hover:text-qz-yellow transition-colors">AC & Heating Service</Link>
               </li>
               <li>
-                <Link to="/services" className="text-qz-red hover:underline mt-2 inline-block">View All Services</Link>
+                <Link to="/services" className="text-qz-yellow hover:underline mt-2 inline-block">View All Services</Link>
               </li>
             </ul>
           </div>
@@ -57,22 +56,25 @@ const Footer = () => {
             <h3 className="text-xl font-bold mb-4 text-white">Our Locations</h3>
             <ul className="space-y-2">
               <li>
-                <Link to="/locations/torrington" className="hover:text-qz-red transition-colors">Torrington</Link>
+                <Link to="/locations/torrington" className="hover:text-qz-yellow transition-colors">Torrington</Link>
               </li>
               <li>
-                <Link to="/locations/thomaston" className="hover:text-qz-red transition-colors">Thomaston</Link>
+                <Link to="/locations/thomaston" className="hover:text-qz-yellow transition-colors">Thomaston</Link>
               </li>
               <li>
-                <Link to="/locations/bantam" className="hover:text-qz-red transition-colors">Bantam</Link>
+                <Link to="/locations/bantam" className="hover:text-qz-yellow transition-colors">Bantam</Link>
               </li>
               <li>
-                <Link to="/locations/watertown" className="hover:text-qz-red transition-colors">Watertown</Link>
+                <Link to="/locations/watertown" className="hover:text-qz-yellow transition-colors">Watertown</Link>
               </li>
               <li>
-                <Link to="/locations/naugatuck" className="hover:text-qz-red transition-colors">Naugatuck</Link>
+                <Link to="/locations/naugatuck" className="hover:text-qz-yellow transition-colors">Naugatuck</Link>
               </li>
               <li>
-                <Link to="/locations/orange" className="hover:text-qz-red transition-colors">Orange</Link>
+                <Link to="/locations/orange" className="hover:text-qz-yellow transition-colors">Orange</Link>
+              </li>
+              <li>
+                <Link to="/locations" className="text-qz-yellow hover:underline mt-2 inline-block">View All Locations</Link>
               </li>
             </ul>
           </div>
@@ -83,11 +85,11 @@ const Footer = () => {
             <ul className="space-y-3">
               <li className="flex items-start">
                 <Phone size={18} className="mr-2 mt-1 flex-shrink-0" />
-                <a href="tel:8604073984" className="hover:text-qz-red transition-colors">(860) 407-3984</a>
+                <a href="tel:8604073984" className="hover:text-qz-yellow transition-colors">(860) 407-3984</a>
               </li>
               <li className="flex items-start">
                 <Mail size={18} className="mr-2 mt-1 flex-shrink-0" />
-                <a href="mailto:info@quietzonect.com" className="hover:text-qz-red transition-colors">info@quietzonect.com</a>
+                <a href="mailto:info@quietzonect.com" className="hover:text-qz-yellow transition-colors">info@quietzonect.com</a>
               </li>
               <li className="flex items-start">
                 <MapPin size={18} className="mr-2 mt-1 flex-shrink-0" />
@@ -106,9 +108,9 @@ const Footer = () => {
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p>&copy; {new Date().getFullYear()} Quiet Zone CT. All rights reserved.</p>
             <div className="flex space-x-4 mt-4 md:mt-0">
-              <Link to="/privacy" className="hover:text-qz-red transition-colors">Privacy Policy</Link>
-              <Link to="/terms" className="hover:text-qz-red transition-colors">Terms of Service</Link>
-              <Link to="/sitemap" className="hover:text-qz-red transition-colors">Sitemap</Link>
+              <Link to="/privacy" className="hover:text-qz-yellow transition-colors">Privacy Policy</Link>
+              <Link to="/terms" className="hover:text-qz-yellow transition-colors">Terms of Service</Link>
+              <Link to="/sitemap" className="hover:text-qz-yellow transition-colors">Sitemap</Link>
             </div>
           </div>
         </div>
